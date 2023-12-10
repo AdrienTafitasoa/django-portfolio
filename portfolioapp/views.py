@@ -8,6 +8,11 @@ from django.contrib.auth import logout
 from portfolioapp.forms import VisiteurForm, ContactForm
 from portfolioapp.models import Visiteur
 
+# Pour Email
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
 # Create your views here.
 
 # def login(request):
@@ -49,6 +54,40 @@ def contact(request):
             
             # Création d'un nouvel commentaire
             Visiteur.objects.create(nom = email, poste = poste, observations = observations)
+            
+            # Envoie Email
+            # Paramètres de connexion au serveur SMTP
+            smtp_server = 'serveur_smtp'
+            smtp_port = 587
+            smtp_username = 'votre_adresse_email'
+            smtp_password = 'votre_mot_de_passe'
+            
+            # Adresse e-mail de l'expéditeur
+            sender_email = 'votre_adresse_email'
+
+            # Adresse e-mail du destinataire
+            recipient_email = 'adresse_email_destinataire'
+
+            # Création de l'objet du message
+            message = MIMEMultipart()
+            message['From'] = sender_email
+            message['To'] = recipient_email
+            message['Subject'] = 'Sujet de l\'e-mail'
+
+            # Corps du message
+            message_text = 'Contenu de l\'e-mail'
+            message.attach(MIMEText(message_text, 'plain'))
+
+            # Connexion au serveur SMTP
+            smtp_connection = smtplib.SMTP(smtp_server, smtp_port)
+            smtp_connection.starttls()
+            smtp_connection.login(smtp_username, smtp_password)
+
+            # Envoi de l'e-mail
+            smtp_connection.send_message(message)
+
+            # Fermeture de la connexion au serveur SMTP
+            smtp_connection.quit()
             
         else:
             print("Erorr ::: Formulaire ")
