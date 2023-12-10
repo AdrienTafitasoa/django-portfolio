@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 from portfolioapp.forms import VisiteurForm, ContactForm
 from portfolioapp.models import Visiteur
 
@@ -14,9 +15,15 @@ from portfolioapp.models import Visiteur
 #     context = {}
 #     return render(request,'login.html',context)
 
+@login_required
 def home(request):
     context ={}
     return render(request, 'homepage.html',context)
+
+def logoutView(request):
+    logout(request)
+    request.session.clear()
+    return redirect('/login')
 
 @login_required
 def competences(request):
