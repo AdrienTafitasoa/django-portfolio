@@ -7,4 +7,4 @@ class VisiteurForm(forms.Form):
 class ContactForm(forms.Form):
     nom = forms.CharField(max_length=50, error_messages={'required': 'Champs obligatoire'})
     poste = forms.CharField(max_length=50, error_messages={'required': 'Champs obligatoire'})
-    obsrvation = forms.CharField(max_length=250, error_messages={'required': 'Champs obligatoire'})
+    observations = forms.CharField(max_length=250, error_messages={'required': 'Champs obligatoire'})
