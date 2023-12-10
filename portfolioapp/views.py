@@ -57,16 +57,16 @@ def contact(request):
             
             # Envoie Email
             # Paramètres de connexion au serveur SMTP
-            smtp_server = 'serveur_smtp'
+            smtp_server = 'smtp.gmail.com'
             smtp_port = 587
-            smtp_username = 'votre_adresse_email'
-            smtp_password = 'votre_mot_de_passe'
+            smtp_username = 'adrientafitasoa@gmail.com'
+            smtp_password = 'votremdp'
             
             # Adresse e-mail de l'expéditeur
-            sender_email = 'votre_adresse_email'
+            sender_email = 'tafitasoarobinson@gmail.com'
 
             # Adresse e-mail du destinataire
-            recipient_email = 'adresse_email_destinataire'
+            recipient_email = 'adrientafitasoa@gmail.com'
 
             # Création de l'objet du message
             message = MIMEMultipart()
