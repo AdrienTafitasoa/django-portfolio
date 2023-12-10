@@ -45,7 +45,7 @@ def contact(request):
             #Acceder au formulaire
             email = contact.cleaned_data.get('nom')
             poste = contact.cleaned_data.get('poste')
-            observation = contact.cleaned_data.get('observation')
+            observation = contact.cleaned_data.get('observations')
             
             # Création d'un nouvel commentaire
             Visiteur.objects.create(nom = email, poste = poste, observations = observation)
