@@ -43,13 +43,13 @@ def contact(request):
         
         if contact.is_valid():
             #Acceder au formulaire
-            email = contact.cleaned_data.get('email')
+            email = contact.cleaned_data.get('nom')
             poste = contact.cleaned_data.get('poste')
             observation = contact.cleaned_data.get('observation')
             
             # Création d'un nouvel commentaire
-            obs = Visiteur.objects.create(nom = email, poste = poste, observations = observation)
-            obs.save()
+            Visiteur.objects.create(nom = email, poste = poste, observations = observation)
+            
         else:
             print("Erorr ::: Formulaire ")
         

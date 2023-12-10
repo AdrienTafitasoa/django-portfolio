@@ -9,16 +9,16 @@
 
     <div class="d-flex gap-2 gap-md-4 justify-content-around">
         <div class="card p-3 p-md-4 p-xl-5 border-light-subtle shadow-sm" style="width : 70%; padding : 20px">
-            <form method="POST">
+            <form method="POST" action={% url 'contact' %}>
                 {% csrf_token %}
                 {{from.as_p}}
                 <div class="mb-3">
-                  <label for="email" class="form-label">Email</label>
-                  <input type="email" name="email" class="form-control" id="email" placeholder="abc@example.com" aria-describedby="emailHelp" required/>
+                    <label for="nom" class="form-label">Email</label>
+                    <input type="email" name="nom" class="form-control" id="nom" placeholder="abc@example.com" aria-describedby="emailHelp" required/>
                 </div>
                 <div class="mb-3">
-                  <label for="poste" class="form-label">Poste</label>
-                  <input type="text" class="form-control" name="poste" id="poste" required/>
+                    <label for="poste" class="form-label">Poste</label>
+                    <input type="text" class="form-control" name="poste" id="poste" required/>
                 </div>
                 
                 <div class="mb-3">
