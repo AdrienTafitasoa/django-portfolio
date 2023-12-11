@@ -57,37 +57,37 @@ def contact(request):
             
             # Envoie Email
             # Paramètres de connexion au serveur SMTP
-            smtp_server = 'smtp.gmail.com'
-            smtp_port = 587
-            smtp_username = 'adrientafitasoa@gmail.com'
-            smtp_password = 'votremdp'
+            # smtp_server = 'smtp.gmail.com'
+            # smtp_port = 587
+            # smtp_username = 'adrientafitasoa@gmail.com'
+            # smtp_password = 'votremdp'
             
-            # Adresse e-mail de l'expéditeur
-            sender_email = 'tafitasoarobinson@gmail.com'
+            # # Adresse e-mail de l'expéditeur
+            # sender_email = 'tafitasoarobinson@gmail.com'
 
-            # Adresse e-mail du destinataire
-            recipient_email = 'adrientafitasoa@gmail.com'
+            # # Adresse e-mail du destinataire
+            # recipient_email = 'adrientafitasoa@gmail.com'
 
-            # Création de l'objet du message
-            message = MIMEMultipart()
-            message['From'] = sender_email
-            message['To'] = recipient_email
-            message['Subject'] = 'Sujet de l\'e-mail'
+            # # Création de l'objet du message
+            # message = MIMEMultipart()
+            # message['From'] = sender_email
+            # message['To'] = recipient_email
+            # message['Subject'] = 'Sujet de l\'e-mail'
 
-            # Corps du message
-            message_text = 'Contenu de l\'e-mail'
-            message.attach(MIMEText(message_text, 'plain'))
+            # # Corps du message
+            # message_text = 'Contenu de l\'e-mail'
+            # message.attach(MIMEText(message_text, 'plain'))
 
-            # Connexion au serveur SMTP
-            smtp_connection = smtplib.SMTP(smtp_server, smtp_port)
-            smtp_connection.starttls()
-            smtp_connection.login(smtp_username, smtp_password)
+            # # Connexion au serveur SMTP
+            # smtp_connection = smtplib.SMTP(smtp_server, smtp_port)
+            # smtp_connection.starttls()
+            # smtp_connection.login(smtp_username, smtp_password)
 
-            # Envoi de l'e-mail
-            smtp_connection.send_message(message)
+            # # Envoi de l'e-mail
+            # smtp_connection.send_message(message)
 
-            # Fermeture de la connexion au serveur SMTP
-            smtp_connection.quit()
+            # # Fermeture de la connexion au serveur SMTP
+            # smtp_connection.quit()
             
         else:
             print("Erorr ::: Formulaire ")
